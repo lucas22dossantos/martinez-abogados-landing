@@ -339,17 +339,23 @@ html {
 }
 
 .area-row {
-  display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) 44px;
-  gap: 2.5rem;
-  align-items: center;
   padding: 2.4rem 0;
   border-bottom: 1px solid rgba(29, 27, 24, 0.08);
   transition: all 0.3s ease;
 }
 
-.area-row:hover {
-  transform: translateX(6px);
+.area-toggle {
+  width: 100%;
+  border: none;
+  background: transparent;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 44px;
+  gap: 2.5rem;
+  align-items: center;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
 }
 
 .area-index {
@@ -385,10 +391,58 @@ html {
   transition: all 0.3s ease;
 }
 
-.area-row:hover .area-arrow {
+.area-row.is-open .area-arrow {
   border-color: var(--accent);
   color: var(--accent);
-  transform: translateX(4px);
+  transform: rotate(45deg);
+}
+
+.area-panel {
+  margin-top: 1.2rem;
+  padding-left: calc(40px + 2.5rem);
+  color: rgba(29, 27, 24, 0.65);
+  line-height: 1.7;
+}
+
+.area-panel p {
+  margin-bottom: 1rem;
+}
+
+.area-details {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  padding: 0;
+}
+
+.area-details li {
+  position: relative;
+  padding-left: 1rem;
+  color: rgba(29, 27, 24, 0.6);
+  font-size: 0.92rem;
+}
+
+.area-details li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.area-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.7rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.area-cta:hover {
+  color: #a96539;
 }
 
 /* About Section */
@@ -1251,12 +1305,16 @@ footer {
     margin-top: 0;
   }
 
-  .area-row {
+  .area-toggle {
     grid-template-columns: 30px minmax(0, 1fr);
   }
 
   .area-arrow {
     justify-self: end;
+  }
+
+  .area-panel {
+    padding-left: calc(30px + 2.5rem);
   }
 
   .hero h1 {

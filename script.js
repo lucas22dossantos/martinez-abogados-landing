@@ -22,6 +22,30 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
+// Areas accordion
+const areaToggles = document.querySelectorAll(".area-toggle");
+areaToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const panelId = toggle.getAttribute("aria-controls");
+    const panel = panelId ? document.getElementById(panelId) : null;
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+    areaToggles.forEach((btn) => {
+      btn.setAttribute("aria-expanded", "false");
+      btn.closest(".area-row")?.classList.remove("is-open");
+      const id = btn.getAttribute("aria-controls");
+      const p = id ? document.getElementById(id) : null;
+      if (p) p.hidden = true;
+    });
+
+    if (!isOpen) {
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.closest(".area-row")?.classList.add("is-open");
+      if (panel) panel.hidden = false;
+    }
+  });
+});
+
 // Form submission (Formspree + modal)
 const form = document.querySelector(".contact-form");
 const modalBackdrop = document.getElementById("formModal");
