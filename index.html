@@ -402,55 +402,81 @@
 
     <!-- Contact Section -->
     <section class="contact-section" id="contacto">
-      <h2>
-        ¿Tiene un caso <span class="highlight">que necesita atención?</span>
-      </h2>
-      <p>
-        Contáctenos hoy para una consulta gratuita y descubra cómo podemos
-        ayudarlo.
-      </p>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-eyebrow">Contacto</div>
+          <h2>
+            Conversemos sobre <span class="highlight">su caso</span>
+          </h2>
+          <p class="contact-lead">
+            Complete el formulario o contáctenos directamente. Respondemos todas
+            las consultas en menos de 24 horas.
+          </p>
 
-      <form class="contact-form">
-        <div class="form-row">
-          <input type="text" placeholder="Nombre completo" required />
-          <input type="email" placeholder="Correo electrónico" required />
+          <div class="contact-list">
+            <div class="contact-item">
+              <span class="contact-icon">☎</span>
+              <div>
+                <strong>Teléfono</strong>
+                <span>+54 9 11 1234-5678</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉</span>
+              <div>
+                <strong>Email</strong>
+                <span>consultas@estudiomartinez.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">⌖</span>
+              <div>
+                <strong>Dirección</strong>
+                <span>Av. Corrientes 1234, Piso 5, CABA</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">⏱</span>
+              <div>
+                <strong>Horarios</strong>
+                <span>Lunes a Viernes: 9:00 - 18:00</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form-row">
-          <input type="tel" placeholder="Teléfono" required />
-          <input type="text" placeholder="Asunto" required />
-        </div>
-        <textarea
-          placeholder="Describa brevemente su caso..."
-          required
-        ></textarea>
-        <button type="submit" class="submit-button">Enviar Consulta</button>
-      </form>
+
+        <form class="contact-form">
+          <label>
+            Nombre completo
+            <input type="text" placeholder="Ingrese su nombre" required />
+          </label>
+          <div class="form-row">
+            <label>
+              Email
+              <input type="email" placeholder="su@email.com" required />
+            </label>
+            <label>
+              Teléfono
+              <input type="tel" placeholder="+54 9 11..." required />
+            </label>
+          </div>
+          <label>
+            Su consulta
+            <textarea
+              placeholder="Describa brevemente su situación..."
+              required
+            ></textarea>
+          </label>
+          <button type="submit" class="submit-button">
+            Enviar consulta →
+          </button>
+        </form>
+      </div>
     </section>
 
     <!-- Map Section -->
     <section class="map-section">
-      <h2 class="section-title">
-        Conversemos sobre <span class="highlight">su caso</span>
-      </h2>
-
       <div class="map-container">
-        <div class="contact-info-grid">
-          <div class="contact-info-item">
-            <h4>Dirección</h4>
-            <p>Av. Corrientes 1234, Piso 5<br />C1043 CABA, Argentina</p>
-          </div>
-          <div class="contact-info-item">
-            <h4>Teléfono</h4>
-            <p>+54 11 4567-8900<br />+54 9 11 1234-5678</p>
-          </div>
-          <div class="contact-info-item">
-            <h4>Email</h4>
-            <p>
-              info@martinezabogados.com.ar<br />consultas@martinezabogados.com.ar
-            </p>
-          </div>
-        </div>
-
         <div class="map-placeholder">
           [ Integrar aquí Google Maps con su ubicación ]
         </div>
