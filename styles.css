@@ -1085,6 +1085,85 @@ footer {
   }
 }
 
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 8, 7, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 2000;
+  padding: 2rem;
+}
+
+.modal-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  background: #fdfbf8;
+  border: 1px solid rgba(29, 27, 24, 0.12);
+  padding: 2.6rem 2.8rem 2.2rem;
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.modal-backdrop.is-open .modal {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: rgba(29, 27, 24, 0.6);
+}
+
+.modal-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 0.65rem;
+  color: rgba(29, 27, 24, 0.55);
+  margin-bottom: 1rem;
+}
+
+.modal h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: #1d1b18;
+}
+
+.modal-message {
+  color: rgba(29, 27, 24, 0.7);
+  line-height: 1.7;
+  margin-bottom: 1.6rem;
+}
+
+.modal-action {
+  background: #1d1b18;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
 .whatsapp-float:hover {
   transform: scale(1.15);
   box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);

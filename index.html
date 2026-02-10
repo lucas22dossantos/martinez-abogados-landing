@@ -402,24 +402,44 @@
           </div>
         </div>
 
-        <form class="contact-form">
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/TU_ID"
+          method="POST"
+        >
           <label>
             Nombre completo
-            <input type="text" placeholder="Ingrese su nombre" required />
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Ingrese su nombre"
+              required
+            />
           </label>
           <div class="form-row">
             <label>
               Email
-              <input type="email" placeholder="su@email.com" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="su@email.com"
+                required
+              />
             </label>
             <label>
               Teléfono
-              <input type="tel" placeholder="+54 9 11..." required />
+              <input
+                type="tel"
+                name="telefono"
+                placeholder="+54 9 11..."
+                required
+              />
             </label>
           </div>
           <label>
             Su consulta
             <textarea
+              name="consulta"
               placeholder="Describa brevemente su situación..."
               required
             ></textarea>
@@ -508,6 +528,19 @@
         />
       </svg>
     </a>
+
+    <!-- Modal -->
+    <div class="modal-backdrop" id="formModal" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" type="button" aria-label="Cerrar">×</button>
+        <div class="modal-eyebrow">Consulta enviada</div>
+        <h3 id="modalTitle">Gracias por su consulta</h3>
+        <p class="modal-message">
+          Hemos recibido su mensaje. Nos pondremos en contacto con usted a la brevedad.
+        </p>
+        <button class="modal-action" type="button">Cerrar</button>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
