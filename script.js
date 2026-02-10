@@ -110,6 +110,23 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModal();
 });
 
+// Mobile hero stats reveal
+const heroSection = document.querySelector(".hero");
+const updateHeroStats = () => {
+  if (!heroSection) return;
+  if (window.innerWidth > 600) {
+    document.body.classList.remove("show-hero-stats");
+    return;
+  }
+  const triggerPoint = heroSection.offsetHeight * 0.6;
+  const shouldShow = window.scrollY > triggerPoint;
+  document.body.classList.toggle("show-hero-stats", shouldShow);
+};
+
+window.addEventListener("scroll", updateHeroStats);
+window.addEventListener("resize", updateHeroStats);
+updateHeroStats();
+
 // Intersection Observer for animations
 const observerOptions = {
   threshold: 0.1,
