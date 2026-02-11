@@ -502,6 +502,7 @@
           class="contact-form"
           action="https://formspree.io/f/TU_ID"
           method="POST"
+          novalidate
         >
           <label>
             Nombre completo
@@ -509,6 +510,11 @@
               type="text"
               name="nombre"
               placeholder="Ingrese su nombre"
+              minlength="3"
+              maxlength="60"
+              pattern="[A-Za-zÀ-ÿ\\s]{3,60}"
+              autocomplete="name"
+              inputmode="text"
               required
             />
           </label>
@@ -518,7 +524,11 @@
               <input
                 type="email"
                 name="email"
-                placeholder="su@email.com"
+                placeholder="ejemplo@gmail.com"
+                maxlength="120"
+                pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,}"
+                autocomplete="email"
+                inputmode="email"
                 required
               />
             </label>
@@ -527,7 +537,12 @@
               <input
                 type="tel"
                 name="telefono"
-                placeholder="+54 9 11..."
+                placeholder="5491112345678"
+                minlength="8"
+                maxlength="15"
+                pattern="[0-9]{8,15}"
+                autocomplete="tel"
+                inputmode="numeric"
                 required
               />
             </label>
@@ -537,6 +552,8 @@
             <textarea
               name="consulta"
               placeholder="Describa brevemente su situación..."
+              minlength="20"
+              maxlength="1000"
               required
             ></textarea>
           </label>
