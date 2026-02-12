@@ -24,6 +24,30 @@ body {
   overflow-x: hidden;
 }
 
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -100px;
+  z-index: 3000;
+  padding: 0.7rem 1rem;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid var(--accent);
+}
+
+.skip-link:focus-visible {
+  top: 0.75rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .scroll-progress {
   position: fixed;
   top: 0;
@@ -156,7 +180,7 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("img/hero.png");
+  background-image: url("img/hero.webp");
   background-size: cover;
   background-position: center;
   filter: saturate(0.6) contrast(1.05);

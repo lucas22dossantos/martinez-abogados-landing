@@ -247,8 +247,12 @@ if (form) {
 if (form) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const action = form.getAttribute("action");
+    const action = form.getAttribute("action")?.trim() || "";
     const isValid = validateContactForm();
+    const isDemoAction =
+      !action ||
+      action === "#" ||
+      /TU_ID|your_form_id/i.test(action);
 
     if (!isValid) {
       form.reportValidity();
@@ -256,7 +260,7 @@ if (form) {
     }
 
     try {
-      if (action) {
+      if (!isDemoAction) {
         await fetch(action, {
           method: "POST",
           body: new FormData(form),
