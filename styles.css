@@ -419,7 +419,7 @@ body.is-loaded .hero-eyebrow span {
   text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 4px;
-  color: rgba(29, 27, 24, 0.55);
+  color: rgba(29, 27, 24, 0.72);
   margin-bottom: 1.5rem;
 }
 
@@ -438,7 +438,7 @@ body.is-loaded .hero-eyebrow span {
 }
 
 .areas-intro {
-  color: rgba(29, 27, 24, 0.65);
+  color: rgba(29, 27, 24, 0.78);
   max-width: 420px;
   line-height: 1.7;
   font-size: 0.98rem;
@@ -476,7 +476,7 @@ body.is-loaded .hero-eyebrow span {
 
 .area-index {
   font-size: 0.75rem;
-  color: rgba(29, 27, 24, 0.45);
+  color: rgba(29, 27, 24, 0.62);
   letter-spacing: 2px;
 }
 
@@ -488,7 +488,7 @@ body.is-loaded .hero-eyebrow span {
 }
 
 .area-body p {
-  color: rgba(29, 27, 24, 0.65);
+  color: rgba(29, 27, 24, 0.78);
   font-size: 0.95rem;
   line-height: 1.7;
   max-width: 560px;
@@ -516,7 +516,7 @@ body.is-loaded .hero-eyebrow span {
 .area-panel {
   margin-top: 1.2rem;
   padding-left: calc(40px + 2.5rem);
-  color: rgba(29, 27, 24, 0.65);
+  color: rgba(29, 27, 24, 0.78);
   line-height: 1.7;
   max-height: 0;
   opacity: 0;
@@ -548,7 +548,7 @@ body.is-loaded .hero-eyebrow span {
 .area-details li {
   position: relative;
   padding-left: 1rem;
-  color: rgba(29, 27, 24, 0.6);
+  color: rgba(29, 27, 24, 0.74);
   font-size: 0.92rem;
 }
 
@@ -783,7 +783,7 @@ body.is-loaded .hero-eyebrow span {
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.68rem;
-  color: rgba(40, 40, 40, 0.6);
+  color: rgba(40, 40, 40, 0.74);
   margin-bottom: 1rem;
 }
 
@@ -831,7 +831,7 @@ body.is-loaded .hero-eyebrow span {
   text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 4px;
-  color: rgba(29, 27, 24, 0.55);
+  color: rgba(29, 27, 24, 0.72);
   margin-bottom: 1.2rem;
 }
 
@@ -864,7 +864,7 @@ body.is-loaded .hero-eyebrow span {
 }
 
 .process-header p {
-  color: rgba(29, 27, 24, 0.65);
+  color: rgba(29, 27, 24, 0.78);
   line-height: 1.7;
   font-size: 0.98rem;
 }
@@ -933,7 +933,7 @@ body.is-loaded .hero-eyebrow span {
 }
 
 .process-card p {
-  color: rgba(29, 27, 24, 0.6);
+  color: rgba(29, 27, 24, 0.74);
   line-height: 1.8;
 }
 
@@ -1071,6 +1071,7 @@ body.is-loaded .hero-eyebrow span {
   padding: 7rem 5%;
   background: #f8f5f1;
   color: #1d1b18;
+  text-shadow: none;
 }
 
 .contact-grid {
@@ -1081,11 +1082,22 @@ body.is-loaded .hero-eyebrow span {
 }
 
 .contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 0.7rem;
-  color: rgba(29, 27, 24, 0.55);
+  color: #5f5953;
   margin-bottom: 1.2rem;
+}
+
+.contact-eyebrow::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--accent);
+  display: inline-block;
 }
 
 .contact-section h2 {
@@ -1101,7 +1113,7 @@ body.is-loaded .hero-eyebrow span {
 }
 
 .contact-lead {
-  color: rgba(29, 27, 24, 0.65);
+  color: #4f4a45;
   line-height: 1.7;
   margin-bottom: 2rem;
 }
@@ -1136,11 +1148,11 @@ body.is-loaded .hero-eyebrow span {
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 0.3rem;
-  color: rgba(29, 27, 24, 0.7);
+  color: #4f4a45;
 }
 
 .contact-item span {
-  color: rgba(29, 27, 24, 0.65);
+  color: #3f3b37;
   font-size: 0.95rem;
 }
 
@@ -1150,15 +1162,17 @@ body.is-loaded .hero-eyebrow span {
   background: #fdfbf8;
   padding: 2.5rem;
   border: 1px solid rgba(29, 27, 24, 0.08);
+  margin-top: 7.4rem;
 }
 
 .contact-form label {
   display: grid;
   gap: 0.6rem;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
+  font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(29, 27, 24, 0.6);
+  color: #5b5650;
 }
 
 .form-row {
@@ -1176,7 +1190,13 @@ body.is-loaded .hero-eyebrow span {
   background: transparent;
   font-family: "Crimson Pro", serif;
   font-size: 1rem;
+  color: #2b2825;
   transition: all 0.3s;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #807a73;
 }
 
 .contact-form input:focus,
@@ -1213,12 +1233,12 @@ body.is-loaded .hero-eyebrow span {
 
 /* Map Section */
 .map-section {
-  padding: 3rem 5% 7rem;
+  padding: 1.2rem 5% 7rem;
   background: #f8f5f1;
 }
 
 .map-container {
-  margin-top: 2rem;
+  margin-top: 0;
   background: #fdfbf8;
   padding: 1.2rem;
   border-radius: 8px;
@@ -1443,18 +1463,11 @@ footer {
   position: relative;
   isolation: isolate;
   opacity: 0;
-  filter: blur(1px);
-  transform: translate3d(
-    0,
-    calc(var(--section-enter-y) + var(--section-parallax)),
-    0
-  )
-  scale(0.998);
+  transform: translate3d(0, var(--section-enter-y), 0);
   transition:
     transform 0.58s var(--motion-ease),
-    opacity 0.56s var(--motion-ease),
-    filter 0.56s var(--motion-ease);
-  will-change: transform, opacity, filter;
+    opacity 0.56s var(--motion-ease);
+  will-change: transform, opacity;
 }
 
 .motion-section::before {
@@ -1473,8 +1486,7 @@ footer {
 .motion-section.is-section-visible {
   --section-enter-y: 0px;
   opacity: 1;
-  filter: blur(0);
-  transform: translate3d(0, var(--section-parallax), 0) scale(1);
+  transform: translate3d(0, 0, 0);
 }
 
 .motion-section.is-section-visible::before {
@@ -1488,6 +1500,10 @@ footer {
 .contact-section.motion-section,
 .map-section.motion-section {
   --section-curtain: #f8f5f1;
+}
+
+.contact-section.motion-section::before {
+  opacity: 0;
 }
 
 .about-section.motion-section {
@@ -1825,10 +1841,11 @@ footer.motion-section {
 
   .contact-form {
     padding: 2rem;
+    margin-top: 0;
   }
 
   .map-section {
-    padding: 2.5rem 5% 6rem;
+    padding: 1rem 5% 6rem;
   }
 
   .map-placeholder {
