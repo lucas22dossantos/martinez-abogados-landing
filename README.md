@@ -20,7 +20,6 @@ landing/
   index.html
   styles.css
   script.js
-  sitemap.xml
   img/
     hero.webp
     abogado.webp
@@ -76,15 +75,19 @@ Abrir: `http://localhost:5500`
 ## Configuracion para Produccion
 
 1. Reemplazar dominio de ejemplo:
+
 - `https://martinez-abogados.com/` en `canonical`, Open Graph, Twitter y `sitemap.xml`.
 
 2. Configurar endpoint real del formulario:
+
 - Cambiar `action="#"` en `index.html` por endpoint real (Formspree u otro proveedor).
 
 3. Validar datos comerciales:
+
 - Telefono, WhatsApp, email, direccion y horarios.
 
 4. Revisar contenido legal definitivo:
+
 - `privacy.html`, `terms.html`, `ethics.html`.
 
 ## Estado Actual

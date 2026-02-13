@@ -110,6 +110,10 @@ html {
   justify-self: center;
 }
 
+.nav-mobile-only {
+  display: none;
+}
+
 .nav-links a {
   position: relative;
   display: inline-block;
@@ -162,6 +166,45 @@ html {
 .nav-cta:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.nav-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 2px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.nav-toggle span {
+  width: 20px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.9);
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.nav-mobile-cta {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: var(--accent);
+  color: #140e0b;
+  border: 1px solid var(--accent);
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  font-size: 0.74rem;
+  padding: 0.8rem 1rem;
 }
 
 /* Hero Section */
@@ -250,7 +293,9 @@ html {
 body.is-loaded .hero-left > * {
   opacity: 1;
   transform: translateY(0);
-  transition: transform 0.68s var(--motion-ease), opacity 0.68s var(--motion-ease);
+  transition:
+    transform 0.68s var(--motion-ease),
+    opacity 0.68s var(--motion-ease);
 }
 
 body.is-loaded .hero-eyebrow {
@@ -385,7 +430,9 @@ body.is-loaded .hero-eyebrow span {
   align-items: flex-end;
   gap: 2.5rem;
   padding-right: 1rem;
-  transition: transform 0.38s var(--motion-ease), opacity 0.38s var(--motion-ease);
+  transition:
+    transform 0.38s var(--motion-ease),
+    opacity 0.38s var(--motion-ease);
 }
 
 .hero-stat {
@@ -476,7 +523,9 @@ body.is-loaded .hero-eyebrow span {
 .area-row {
   padding: 2.4rem 0;
   border-bottom: 1px solid rgba(29, 27, 24, 0.08);
-  transition: transform 0.3s var(--motion-ease), background-color 0.3s ease;
+  transition:
+    transform 0.3s var(--motion-ease),
+    background-color 0.3s ease;
 }
 
 .area-row:hover {
@@ -745,7 +794,9 @@ body.is-loaded .hero-eyebrow span {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   display: grid;
   gap: 1.8rem;
-  transition: transform 0.32s var(--motion-ease), box-shadow 0.32s var(--motion-ease);
+  transition:
+    transform 0.32s var(--motion-ease),
+    box-shadow 0.32s var(--motion-ease);
 }
 
 .team-card:hover {
@@ -909,7 +960,9 @@ body.is-loaded .hero-eyebrow span {
   border-right: 1px solid rgba(29, 27, 24, 0.06);
   border-bottom: 1px solid rgba(29, 27, 24, 0.06);
   overflow: hidden;
-  transition: transform 0.3s var(--motion-ease), background-color 0.3s ease;
+  transition:
+    transform 0.3s var(--motion-ease),
+    background-color 0.3s ease;
 }
 
 .process-card:hover {
@@ -924,7 +977,12 @@ body.is-loaded .hero-eyebrow span {
   top: 0;
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent) 50%,
+    transparent 100%
+  );
   transform: translateX(-100%);
   opacity: 0.5;
 }
@@ -970,7 +1028,9 @@ body.is-loaded .hero-eyebrow span {
   top: 2.4rem;
   right: 2.4rem;
   opacity: 0.6;
-  transition: transform 0.35s var(--motion-ease), box-shadow 0.35s var(--motion-ease);
+  transition:
+    transform 0.35s var(--motion-ease),
+    box-shadow 0.35s var(--motion-ease);
 }
 
 .process-card.is-visible .process-dot {
@@ -1502,7 +1562,9 @@ footer {
   transform-origin: top;
   transform: scaleY(1);
   opacity: 0.55;
-  transition: transform 0.62s var(--motion-ease), opacity 0.56s var(--motion-ease);
+  transition:
+    transform 0.62s var(--motion-ease),
+    opacity 0.56s var(--motion-ease);
   z-index: 4;
   pointer-events: none;
 }
@@ -1546,7 +1608,9 @@ footer.motion-section {
 .reveal {
   opacity: 0;
   transform: translateY(16px);
-  transition: transform 0.46s var(--motion-ease), opacity 0.46s var(--motion-ease);
+  transition:
+    transform 0.46s var(--motion-ease),
+    opacity 0.46s var(--motion-ease);
 }
 
 .reveal.is-visible {
@@ -1644,6 +1708,123 @@ footer.motion-section {
   }
 
   .nav-links {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 5%;
+    right: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.65rem;
+    background:
+      linear-gradient(180deg, rgba(23, 21, 20, 0.97) 0%, rgba(10, 10, 10, 0.97) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    box-shadow:
+      0 24px 38px rgba(0, 0, 0, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  .main-nav.is-menu-open .nav-links {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.2rem;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.82rem 0.75rem;
+    font-size: 0.78rem;
+    letter-spacing: 1.6px;
+    border-radius: 8px;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-links a.is-active {
+    color: #fff;
+    background: rgba(212, 135, 79, 0.24);
+    border: 1px solid rgba(212, 135, 79, 0.35);
+  }
+
+  .nav-mobile-only {
+    display: block;
+    margin-top: 0.62rem;
+  }
+
+  .nav-mobile-cta {
+    padding: 0.85rem 1rem;
+    border-radius: 8px;
+    letter-spacing: 1.7px;
+    box-shadow: 0 10px 24px rgba(212, 135, 79, 0.25);
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  .nav-mobile-cta:hover,
+  .nav-mobile-cta:focus-visible {
+    transform: translateY(-1px);
+    filter: brightness(1.04);
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+    justify-self: end;
+    border-color: rgba(255, 255, 255, 0.28);
+  }
+
+  .nav-toggle:hover,
+  .nav-toggle:focus-visible {
+    border-color: rgba(212, 135, 79, 0.72);
+    background: rgba(212, 135, 79, 0.12);
+  }
+
+  .main-nav.is-menu-open .nav-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .main-nav.is-menu-open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .main-nav.is-menu-open .nav-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .main-nav.is-menu-open .nav-toggle span {
+    background: #fff;
+  }
+
+  .nav-cta {
     display: none;
   }
 
@@ -1760,7 +1941,7 @@ footer.motion-section {
 
   .hero-actions {
     width: 100%;
-    margin-top: 9.5rem;
+    margin-top: 13rem;
   }
 
   .hero-left {
@@ -1797,21 +1978,15 @@ footer.motion-section {
     gap: 1.2rem;
     align-items: start;
     margin-top: 1.6rem;
-    opacity: 0;
-    transform: translateY(16px);
-    pointer-events: none;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition: none;
   }
 
   .motion-section {
     --section-parallax: 0px;
     --section-enter-y: 16px;
-  }
-
-  .show-hero-stats .hero-right {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
   }
 
   .areas-section,
@@ -1940,4 +2115,3 @@ footer.motion-section {
     padding: 2rem 2rem 1.8rem;
   }
 }
-

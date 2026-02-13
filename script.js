@@ -7,6 +7,7 @@ const modalBackdrop = document.getElementById("formModal");
 const modalClose = modalBackdrop?.querySelector(".modal-close");
 const modalAction = modalBackdrop?.querySelector(".modal-action");
 const modalMessage = modalBackdrop?.querySelector(".modal-message");
+const navToggle = document.querySelector(".nav-toggle");
 const navAnchors = document.querySelectorAll(".main-nav a[href^='#']");
 const pageSections = document.querySelectorAll("section[id]");
 const motionSections = document.querySelectorAll(
@@ -21,8 +22,25 @@ const updateHeroStats = () => {
     document.body.classList.remove("show-hero-stats");
     return;
   }
-  const triggerPoint = heroSection.offsetHeight * 0.6;
-  document.body.classList.toggle("show-hero-stats", window.scrollY > triggerPoint);
+  document.body.classList.add("show-hero-stats");
+};
+
+const closeMobileMenu = () => {
+  if (!navbar || !navToggle) return;
+  navbar.classList.remove("is-menu-open");
+  navToggle.setAttribute("aria-expanded", "false");
+  navToggle.setAttribute("aria-label", "Abrir menu de navegacion");
+};
+
+const toggleMobileMenu = () => {
+  if (!navbar || !navToggle) return;
+  const willOpen = !navbar.classList.contains("is-menu-open");
+  navbar.classList.toggle("is-menu-open", willOpen);
+  navToggle.setAttribute("aria-expanded", willOpen ? "true" : "false");
+  navToggle.setAttribute(
+    "aria-label",
+    willOpen ? "Cerrar menu de navegacion" : "Abrir menu de navegacion",
+  );
 };
 
 const updateHeroParallax = () => {
@@ -83,6 +101,7 @@ window.addEventListener("resize", () => {
   updateHeroParallax();
   updateSectionParallax();
   updateScrollProgress();
+  if (window.innerWidth > 968) closeMobileMenu();
 
   areaToggles.forEach((btn) => {
     if (btn.getAttribute("aria-expanded") === "true") {
@@ -99,7 +118,26 @@ window.addEventListener("load", () => {
   updateHeroParallax();
   updateSectionParallax();
   updateScrollProgress();
+  closeMobileMenu();
 });
+
+if (navToggle && navbar) {
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    toggleMobileMenu();
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof Node)) return;
+    if (!navbar.classList.contains("is-menu-open")) return;
+    if (!navbar.contains(target)) closeMobileMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMobileMenu();
+  });
+}
 
 // Smooth scroll for internal links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -110,6 +148,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     if (!target) return;
     e.preventDefault();
     target.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (navbar?.contains(this)) closeMobileMenu();
   });
 });
 

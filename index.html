@@ -61,12 +61,24 @@
     <!-- Navigation -->
     <nav id="navbar" class="main-nav">
       <a href="#inicio" class="logo" aria-label="Ir al inicio">Martínez <span>&</span> Asociados</a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="primary-navigation">
         <li><a href="#areas">Áreas</a></li>
         <li><a href="#equipo">Equipo</a></li>
         <li><a href="#proceso">Proceso</a></li>
         <li><a href="#contacto">Contacto</a></li>
+        <li class="nav-mobile-only"><a href="#contacto" class="nav-mobile-cta">Consulta Gratuita</a></li>
       </ul>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Abrir menu de navegacion"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a href="#contacto" class="nav-cta">Consulta Gratuita</a>
     </nav>
     <main id="contenido-principal">
